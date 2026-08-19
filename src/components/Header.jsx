@@ -5,16 +5,16 @@ import Contact from './Contact';
 
 export default function Header() {
     return(
-        <div className="header">
-          <h1>MoonLit</h1>
+        <div className="header"> 
+          <h1>MoonLit</h1> {/*Figure out how to get h1 and nav elements on SAME line visually*/ }
             <nav>
                 <Link to="./home">Home</Link> <Link to="./about">About</Link> <Link to="./contact">Contact</Link>
             </nav>
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="./about" element={<About />} />
-                <Route path="./contact" element={<Contact />} />
-            </Routes>  
+                <Route path="/home" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+            </Routes>
         </div>
     );
 };
