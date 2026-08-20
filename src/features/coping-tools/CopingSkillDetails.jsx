@@ -1,6 +1,6 @@
 import {useParams} from 'react-router';
-import mockData from '../mockData';
-import ErrorMessage from './ErrorMessage';
+import mockData from './mockData';
+import ErrorMessage from '../../components/ErrorMessage';
 
 export default function CopingSkillsDetails(){  
    const{cskillId} = useParams(); 

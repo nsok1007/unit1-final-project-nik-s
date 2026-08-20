@@ -1,5 +1,5 @@
 import {Link} from 'react-router';
-import mockData from '../mockData';
+import mockData from './mockData';
 
 export default function CopingSkills(){ 
     return(

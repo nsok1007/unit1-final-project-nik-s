@@ -2,8 +2,8 @@ import {Routes, Route, Link} from 'react-router';
 import Home from './Home';
 import About from './About';
 import Contact from './Contact';
-import CopingSkills from './CopingSkills';
-import CopingSkillsDetails from './CopingSkillDetails';
+import CopingSkills from '../features/coping-tools/CopingSkills';
+import CopingSkillsDetails from '../features/coping-tools/CopingSkillDetails';
 
 export default function Header() {
     return(
