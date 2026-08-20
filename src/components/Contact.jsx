@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import ReusableButton from './ReusableButton';
 
 export default function Contact(){
     const[contactForm, setContactForm] = useState({
@@ -15,6 +16,10 @@ export default function Contact(){
         [name]: value,
     }));
     };
+
+    function save({text}){
+        return <button type="submit">{text}</button>
+    }
 
     return(
         <div>
@@ -46,7 +51,8 @@ export default function Contact(){
                     Feedback:
                     <input type="text" name="message" placeholder="Enter message here..." value={contactForm.text} onChange={handleChange} required />
                 </label> <br></br>
-                <button type="submit">Submit</button>
+                <ReusableButton onClick={save} text={"Submit"}/>
+                
             </form>
         </div>
     );
