@@ -1,7 +1,7 @@
 import {Routes, Route, Link} from 'react-router';
-import Home from './Home';
-import About from './About';
-import Contact from './Contact';
+import Home from '../pages/Home';
+import About from '../pages/About';
+import Contact from '../pages/Contact';
 import CopingSkills from '../features/coping-tools/CopingSkills';
 import CopingSkillsDetails from '../features/coping-tools/CopingSkillDetails';
 
