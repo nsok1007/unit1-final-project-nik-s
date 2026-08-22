@@ -9,22 +9,23 @@ export default function CustomToolForm(){
 
     const handleCustomToolChange = (e) => {
         const{name, value} = e.target;
-        console.log(`Updating ${name}:`, value);
         setCustomTool((prevData) => ({
             ...prevData,
             [name]: value,
         }));
     };
 
-    function createTool(){
-         <button type="submit"></button>
-          console.log(createTool);   //console test for button -- CURRENTLY BROKEN
+    const handleSubmit = (e) => {
+         e.preventDefault();
     }
-
+    function createTool(){
+        return <button type="submit"></button>
+        //message to validate it was successfully submitted?
+    }
+    
     return(
         <div>
-
-            <form>
+            <form onSubmit={handleSubmit}>
                 <h2>Create Your Own Coping Tool</h2>
                 <label>
                     Name your tool: 
