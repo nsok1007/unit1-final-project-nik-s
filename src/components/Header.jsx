@@ -2,8 +2,9 @@ import {Routes, Route, Link} from 'react-router';
 import Home from '../pages/Home';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
-import CopingSkills from '../features/coping-tools/CopingSkills';
+import CopingSkills from '../pages/CopingSkills';
 import CopingSkillsDetails from '../features/coping-tools/CopingSkillDetails';
+import CustomToolForm from '../features/coping-tools/CustomToolForm';
 
 export default function Header() {
     return(
@@ -13,11 +14,14 @@ export default function Header() {
                 <Link to="./home">Home</Link> <Link to="./copingskills">Coping Skills</Link> <Link to="./about">About</Link> <Link to="./contact">Contact</Link>
             </nav>
             <Routes>
+                <Route path="/" element={<Home />} /> {/*Default path which is currently set to home */}
                 <Route path="/home" element={<Home />} />
                 <Route path="/copingskills" element={<CopingSkills />} />
                 <Route path="/copingskills/:cskillId" element={<CopingSkillsDetails />} />
+                <Route path="/features/coping-tools/customtoolform" element={<CustomToolForm />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
+                
             </Routes>
         </div>
     );
