@@ -1,6 +1,6 @@
 import {Link} from 'react-router';
-import CustomToolForm from './CustomToolForm';
-import mockData from './mockData'
+import UserCopingSkills from '../features/coping-tools/UserCopingSkills';
+import mockData from '../features/coping-tools/mockData'
 
 export default function CopingSkills(){ 
     return(
@@ -14,7 +14,7 @@ export default function CopingSkills(){
                     </li>
                 ))}
             </ul>
-            <CustomToolForm />
+            <UserCopingSkills />
             
         </div>
     )
