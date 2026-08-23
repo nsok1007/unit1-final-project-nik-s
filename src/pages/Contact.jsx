@@ -17,6 +17,10 @@ export default function Contact(){
     }));
     };
 
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
+    }
+
     function submitForm({text}){
         return <button type="submit">{text}</button>
     }
@@ -36,7 +40,7 @@ export default function Contact(){
             <br></br>
             <p>To get in touch, please feel free to reach us using the form below!</p>
             <br></br>
-            <form>
+            <form onSubmit={handleOnSubmit}>
                 <label>
                     Name:
                     <input type="text" name="name" placeholder="John Doe" value={contactForm.name} onChange={handleChange} required />
