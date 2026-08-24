@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {useNavigate} from 'react-router';
 import ReusableButton from '../../components/ReusableButton';
 
-export default function CustomToolForm(){
+export default function CustomToolForm({favoriteTool, setFavoriteTool}){
     const [customTool, setCustomTool] = useState({
         title: "",
         description: "",
@@ -16,13 +16,15 @@ export default function CustomToolForm(){
         }));
     };
 
-    const handleSubmit = (e) => {
-         e.preventDefault();
+    const createTool = (e) => {
+        e.preventDefault();
+        setFavoriteTool([
+        ...favoriteTool, customTool
+        ]);
+        console.log( e.target.value);
     }
-    function createTool(){
-        return <button type="submit"></button>
-        //message to validate it was successfully submitted?
-    }
+        
+        
 
    const toCopingSkills = useNavigate();
    const handleNavBack = () => {
@@ -31,7 +33,7 @@ export default function CustomToolForm(){
     
     return(
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={createTool}>
                 <h2>Create Your Own Coping Tool</h2>
                 <label>
                     Name your tool: 
@@ -58,7 +60,7 @@ export default function CustomToolForm(){
                 </label>
                 <br></br>
                 <ReusableButton onClick={handleNavBack} text={"Back"}/>
-                <ReusableButton onClick={createTool} text={"Create"} />
+                <ReusableButton  text={"Create"} />
             </form>    
         </div> 
     );
