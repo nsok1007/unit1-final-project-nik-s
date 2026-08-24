@@ -22,7 +22,9 @@ export default function CopingSkillsDetails(){
    } else {
         return(
             <div>
-                <p className="detail-description">description: {cskill.description}</p>
+                <h1>{cskill.name}</h1>
+                <p className="detail-description"><strong>Description:</strong> {cskill.description}</p>
+
                 <ReusableButton onClick={handleNavBack} text={"Back"} />
             </div>
    )};
