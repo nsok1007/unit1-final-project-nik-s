@@ -5,9 +5,9 @@ export default function UserLibrary({favoriteTool, handleOnDelete}){
     return(
         <ul>
             {favoriteTool.map((cskill) => (
-                        <div key={cskill.id}>
+                        <div key={cskill.name}>
                             <ReusableItem cskill={cskill} />
-                            <ReusableButton onClick={() => handleOnDelete(cskill.id)} text={"Delete"} />
+                            <ReusableButton onClick={() => handleOnDelete(cskill.name)} text={"Delete"} />
                         </div>
              ))}
         </ul>
@@ -15,12 +15,9 @@ export default function UserLibrary({favoriteTool, handleOnDelete}){
 }
 
 /*
-STATUS: FORM CURRENTLY ACCEPTS AND STORES DATA IN STATE; COPING SKILLS ADDED ALSO STORED IN STATE
-
-TODO: UserInventory allows users to delete DEFAULT STATIC coping skills (delete button)
-TODO: UserInventory allows users to delete CUSTOM COPING SKILLS (delete button #2)
 TODO: CustomToolForm allows users to edit their custom coping skill (edit button)
 TODO: Simulate storing data in an API using localStorage hook to achieve above
+TODO: UserLibrary allows users to view their DESCRIPTIONS FROM CUSTOMTOOLFORM
 
 TODO: BONUS -- GET FAVORITE SKILLS TO BE HIDDEN ON COPING SKILLS PAGE SO IT ONLY VISUALLY RENDERS ON USERINVENTORY FROM THE USER PERSPECTIVE
 
