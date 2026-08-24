@@ -16,8 +16,10 @@ export default function Header() {
             ...favoriteTool, cskill
         ]);
     }
-    const HandleOnDelete = (id) => {
-        console.log(id);
+    const handleOnDelete = (name) => {
+        const revisedUserLib = favoriteTool.filter((cskill) => cskill.name !== name);
+        setFavoriteTool(revisedUserLib);
+        console.log(name);
         };
         
 
@@ -46,7 +48,7 @@ export default function Header() {
                 <Route path="/userlibrary" element={
                     <UserLibrary
                         favoriteTool={favoriteTool}
-                        onDelete={HandleOnDelete}/>
+                        handleOnDelete={handleOnDelete}/> //nameOfProperty={nameOfProperty}
                     }
                 />
                 <Route path="/about" element={<About />} />
