@@ -1,8 +1,8 @@
 import {Link} from 'react-router';
-import UserCopingSkills from '../features/coping-tools/UserCopingSkills';
-import mockData from '../features/coping-tools/mockData'
+import mockData from '../features/coping-tools/mockData.json'
 
-export default function CopingSkills(){ 
+
+export default function CopingSkills(){
     return(
         <div>
             <ul>
@@ -14,8 +14,6 @@ export default function CopingSkills(){
                     </li>
                 ))}
             </ul>
-            <UserCopingSkills />
-            
         </div>
     )
 }
