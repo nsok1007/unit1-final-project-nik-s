@@ -4,7 +4,7 @@ import ReusableButton from '../../components/ReusableButton';
 
 export default function CustomToolForm({favoriteTool, setFavoriteTool}){
     const [customTool, setCustomTool] = useState({
-        title: "",
+        name: "",
         description: "",
     });
 
@@ -21,7 +21,6 @@ export default function CustomToolForm({favoriteTool, setFavoriteTool}){
         setFavoriteTool([
         ...favoriteTool, customTool
         ]);
-        console.log( e.target.value);
     }
         
         
@@ -40,8 +39,8 @@ export default function CustomToolForm({favoriteTool, setFavoriteTool}){
                     <br></br>
                     <input
                         type="text"
-                        name="title"
-                        value={customTool.title}
+                        name="name"
+                        value={customTool.name}
                         onChange={handleCustomToolChange}
                         placeholder="Self Soothe w/ Five Senses"
                     />
