@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import {useNavigate} from 'react-router';
 import ReusableButton from '../../components/ReusableButton';
 
 export default function CustomToolForm(){
@@ -22,6 +23,11 @@ export default function CustomToolForm(){
         return <button type="submit"></button>
         //message to validate it was successfully submitted?
     }
+
+   const toCopingSkills = useNavigate();
+   const handleNavBack = () => {
+   toCopingSkills('../userinventory');
+   };
     
     return(
         <div>
@@ -51,6 +57,7 @@ export default function CustomToolForm(){
                     />      
                 </label>
                 <br></br>
+                <ReusableButton onClick={handleNavBack} text={"Back"}/>
                 <ReusableButton onClick={createTool} text={"Create"} />
             </form>    
         </div> 
