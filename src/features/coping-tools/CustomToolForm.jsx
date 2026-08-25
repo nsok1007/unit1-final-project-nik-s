@@ -1,35 +1,29 @@
 import {useState} from 'react';
-import {useNavigate} from 'react-router';
 import ReusableButton from '../../components/ReusableButton';
 import mockData from '../coping-tools/mockData.json'
 
-export default function CustomToolForm({favoriteTool, setFavoriteTool}){
+export default function CustomToolForm({favoriteTool, setFavoriteTool, handleNavBack}){ //single state object
     const [customTool, setCustomTool] = useState({
         name: "",
         description: "",
         id: (mockData.length + favoriteTool.length + 10).toString(), //declared id property for form to use so user-created tools have a generated id to allow rendering using Route
     });
 
-    const handleCustomToolChange = (e) => {
+    const handleCustomToolChange = (e) => { //destructure name and value from the event
         const{name, value} = e.target;
         setCustomTool((prevData) => ({
             ...prevData,
-            [name]: value,
+            [name]: value, //Update only the field that matches the input's name
         }));
     };
 
-    const createTool = (e) => {
+    const createTool = (e) => { 
         e.preventDefault();
-        setFavoriteTool((favoriteTool) => [
+        setFavoriteTool((favoriteTool) => [ //creates a new coping skill and appends it to the array favoriteTool
         ...favoriteTool, customTool
         ]);
     }
 
-   const toCopingSkills = useNavigate();
-   const handleNavBack = () => {
-        toCopingSkills('../userinventory');
-        };
-    
     return(
         <div>
             <form onSubmit={createTool}>
@@ -38,10 +32,10 @@ export default function CustomToolForm({favoriteTool, setFavoriteTool}){
                     Name your tool: 
                     <br></br>
                     <input
-                        type="text"
+                        type="text" 
                         name="name"
                         value={customTool.name}
-                        onChange={handleCustomToolChange}
+                        onChange={handleCustomToolChange} //onChange event updates the component's state based on user input
                         placeholder="Self Soothe w/ Five Senses"
                         required
                     />
@@ -61,7 +55,7 @@ export default function CustomToolForm({favoriteTool, setFavoriteTool}){
                 </label>
                 <br></br>
                 <ReusableButton onClick={handleNavBack} text={"Back"}/>
-                <ReusableButton  text={"Create"} />
+                <ReusableButton  onClick={handleCustomToolChange} text={"Create"} />
             </form>    
         </div> 
     );

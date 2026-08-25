@@ -16,7 +16,7 @@ export default function CopingSkills({favoriteTool, handleFavoriteToolOnClick}){
    <div>
         <h1>Coping Skill</h1>
         <ul>
-            {mockData.map((cskill) => (
+            {mockData.map((cskill) => ( //.map() iterates over mockData and renders the destructured prop 'name' from cskill
                     <li key={cskill.id}>
                         <Link to={`/copingskills/${cskill.id}`}>
                         {cskill.name}

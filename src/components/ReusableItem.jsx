@@ -1,5 +1,4 @@
 import {Link} from 'react-router';
-// import CopingSkills from '../pages/CopingSkills';
 
 export default function ReusableItem({cskill}){ 
     return (
