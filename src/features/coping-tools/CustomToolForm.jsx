@@ -1,11 +1,13 @@
 import {useState} from 'react';
 import {useNavigate} from 'react-router';
 import ReusableButton from '../../components/ReusableButton';
+import mockData from '../coping-tools/mockData.json'
 
 export default function CustomToolForm({favoriteTool, setFavoriteTool}){
     const [customTool, setCustomTool] = useState({
         name: "",
         description: "",
+        id: (mockData.length + favoriteTool.length + 10).toString(), //declared id property for form to use so user-created tools have a generated id to allow rendering using Route
     });
 
     const handleCustomToolChange = (e) => {
@@ -18,17 +20,15 @@ export default function CustomToolForm({favoriteTool, setFavoriteTool}){
 
     const createTool = (e) => {
         e.preventDefault();
-        setFavoriteTool([
+        setFavoriteTool((favoriteTool) => [
         ...favoriteTool, customTool
         ]);
     }
-        
-        
 
    const toCopingSkills = useNavigate();
    const handleNavBack = () => {
-   toCopingSkills('../userinventory');
-   };
+        toCopingSkills('../userinventory');
+        };
     
     return(
         <div>
@@ -43,6 +43,7 @@ export default function CustomToolForm({favoriteTool, setFavoriteTool}){
                         value={customTool.name}
                         onChange={handleCustomToolChange}
                         placeholder="Self Soothe w/ Five Senses"
+                        required
                     />
                 </label>
                 <br></br>
@@ -55,6 +56,7 @@ export default function CustomToolForm({favoriteTool, setFavoriteTool}){
                         value={customTool.description}
                         onChange={handleCustomToolChange}
                         placeholder="Vision: Look at the flowers outside. Hearing: Listen to calming music. Smell: Put lavander oil in the diffuser. Taste: Have a small piece of candy and savor the flavor and texture. Touch: Hold my favorite plushie in my hands and notice how it feels."
+                        required
                     />      
                 </label>
                 <br></br>
