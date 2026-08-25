@@ -38,7 +38,10 @@ export default function Header() {
                         favoriteTool={favoriteTool} />
                     }
                 />
-                <Route path="/copingskills/:cskillId" element={<CopingSkillsDetails />} />
+                <Route path="/copingskills/:cskillId" element={
+                    <CopingSkillsDetails favoriteTool={favoriteTool}/>
+                    } 
+                />
                 <Route path="/features/coping-tools/customtoolform" element={
                     <CustomToolForm 
                         favoriteTool={favoriteTool} 
