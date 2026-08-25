@@ -1,9 +1,12 @@
+import {useState} from 'react';
 import {useNavigate, Link} from 'react-router';
 import ReusableButton from '../components/ReusableButton';
 import ReusableItem from '../components/ReusableItem';
 import mockData from '../features/coping-tools/mockData.json'
 
 export default function CopingSkills({favoriteTool, handleFavoriteToolOnClick}){ 
+    const [elementVisible] = useState(true)
+
     const toCustomToolForm = useNavigate();
     const handlePageRedirect = () => {
     toCustomToolForm('/features/coping-tools/customtoolform');
@@ -23,11 +26,15 @@ export default function CopingSkills({favoriteTool, handleFavoriteToolOnClick}){
                 ))}
                 <ReusableButton onClick={handlePageRedirect} text={"New Tool +"} />
        </ul>
-       <ul>
-                {favoriteTool.map((cskill) => (
-                <ReusableItem key={cskill.id} cskill={cskill} />
-                ))}
-       </ul>
+       <div>
+           {!elementVisible && 
+                <ul >
+                    {favoriteTool.map((cskill) => (
+                    <ReusableItem key={cskill.id} cskill={cskill} />
+                    ))}
+                </ul>
+            }
+        </div>
    </div>
    )   
 }
