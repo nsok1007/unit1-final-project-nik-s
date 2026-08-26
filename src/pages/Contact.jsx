@@ -24,7 +24,6 @@ export default function Contact(){
     function submitForm({text}){
         return <button type="submit">{text}</button>
     }
-
     return(
         <div>
             <h1>Contact</h1>
@@ -53,7 +52,7 @@ export default function Contact(){
                 <br />
                 <label>
                     Feedback:
-                    <input type="text" name="message" placeholder="Enter message here..." value={contactForm.text} onChange={handleChange} required />
+                    <textarea name="message" placeholder="Enter message here..." value={contactForm.textarea} rows="5" onChange={handleChange} required />
                 </label> <br></br>
                 <ReusableButton onClick={submitForm} text={"Submit"}/>
                 
