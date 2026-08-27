@@ -1,0 +1,17 @@
+footer{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.35rem 0;
+    background-color: #1f3952;
+    color: #ffffff;
+    font-size: small;
+}
+
+address{
+    font-style: normal;
+}
+
+
+
