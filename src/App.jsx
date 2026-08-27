@@ -9,7 +9,7 @@ import CopingSkillsDetails from './pages/CopingSkillDetails';
 import CustomToolForm from './features/coping-tools/CustomToolForm';
 import EditCustomToolForm from './features/coping-tools/EditCustomToolForm';
 import Header from './components/header/Header';
-import Footer from './components/Footer';
+import Footer from './components/footer/Footer';
 import Disclaimer from './components/Disclaimer';
 import './App.css'
 import './index.css'
@@ -40,9 +40,10 @@ export default function App(){
         };
 
     return(
-        <div>
+        <div className="container-wrapper">
             <Header />
-            <Routes>
+            <div className="main-content">
+           <Routes>
                 <Route path="/" element={<Home />} /> {/*Default path which is currently set to home */}
                 <Route path="/home" element={<Home />} />
                 <Route path="/copingskills" element={
@@ -84,6 +85,7 @@ export default function App(){
                 <Route path="/contact" element={<Contact />} />
             </Routes>
             <br></br>
+            </div>
             <Disclaimer />
             <Footer />
             </div>
