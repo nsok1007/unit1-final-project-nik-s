@@ -6,9 +6,11 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 a{
     color: #ffffff;
     text-align: justify;
+    text-decoration: none;
 }
