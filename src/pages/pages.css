@@ -1,4 +1,3 @@
-
 .header-title{
     color:#ffffff;
     opacity: 95%;
@@ -33,7 +32,9 @@ li{
     color: #ffffff;
     line-height: 1.5rem;
 }
-
+li a:hover{
+    color:#c2baf1;
+}
 .extra-text{
     display: flex;
     justify-content: center;
@@ -47,6 +48,7 @@ li{
     text-align: center;
     padding-bottom: 25px;
 }
+
 .contact-form{
     text-align: left;
     font-size: large;
@@ -93,8 +95,7 @@ textarea{
     color:#fffffe;
 }
 
-
-.custom-tool-form{
+.custom-form{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,4 +127,43 @@ textarea{
     padding-top: 3%;
     line-height: 1.5rem;
     font-size: regular;
+}
+
+.edit-custom-form{
+    text-align: left;
+    font-size: large;
+    font-weight: lighter;
+    line-height: 30px;
+    padding: 20px;
+    width: 500px;
+    height: 300px;
+    color:#fffffe;
+}
+
+.about-logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-logo{
+    width: 200px;
+    height: 200px;
+    margin-top: 30px;
+    border-radius: 50%;
+    object-fit: fill;
+}
+
+.portrait-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portrait{
+    width: 200px;
+    height: 200px;
+    margin-top: 30px;
+    border-radius: 50%;
+    object-fit: fill;
 }

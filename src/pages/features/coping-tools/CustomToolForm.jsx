@@ -25,7 +25,7 @@ export default function CustomToolForm({favoriteTool, setFavoriteTool, handleNav
     }
 
     return(
-        <div className="custom-tool-form">
+        <div className="custom-form">
             <form onSubmit={createTool}>
                 <h2>Create Your Own Coping Tool</h2>
                 <label>

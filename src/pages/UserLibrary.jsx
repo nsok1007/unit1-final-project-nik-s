@@ -12,8 +12,10 @@ export default function UserLibrary({favoriteTool, handleOnDelete, handleNavEdit
                     {favoriteTool.map((cskill) => (
                         <div key={cskill.name}>
                             <ReusableItem cskill={cskill} />
-                            <ReusableButton onClick={() => handleOnDelete(cskill.name)} text={"Delete"} />
-                            <ReusableButton onClick={() => handleNavEdit(cskill.id)} text={"Edit"} />
+                            <div className="button" style={{display: 'flex', justifyContent: 'center', textAlign: 'center', marginTop: '5px', marginBottom: '10px', gap: '5px'}}>
+                                 <ReusableButton onClick={() => handleNavEdit(cskill.id)} text={"Edit"}  style={{marginTop: "10px", width: "50px", height: "20px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}} />
+                                <ReusableButton onClick={() => handleOnDelete(cskill.name)} text={"Delete"} style={{marginTop: "10px", width: "50px", height: "20px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}} />
+                            </div>
                         </div>
                     ))}
                 </ul>

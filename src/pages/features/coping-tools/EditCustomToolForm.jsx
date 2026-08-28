@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {useParams} from 'react-router';
-import ReusableButton from '../../../components/ReusableButton'
+import ReusableButton from '../../../components/ReusableButton';
+
 
 export default function EditCustomToolForm({favoriteTool, setFavoriteTool, handleNavBack}){
      const{cskillId} = useParams(); 
@@ -35,9 +36,10 @@ export default function EditCustomToolForm({favoriteTool, setFavoriteTool, handl
     }
    
     return(
-        <div>
+        <div className="edit-custom-form">
             <form onSubmit={editTool}>
-                <label>
+                <h2>Edit {editedSkill.name}</h2>
+                <label className="edit-label">
                     Coping Skill Name: 
                     <br></br>
                     <input
@@ -48,20 +50,22 @@ export default function EditCustomToolForm({favoriteTool, setFavoriteTool, handl
                     />
                 </label>
                 <br></br>
-                <label>
+                <label className="edit-label">
                     Description:
                     <br></br>
-                    <input
-                        type="text"
+                    <textarea
                         name="description"
                         onChange={handleEditForm}
                         value={editedSkill.description}
                     />
+                    <div className="button">
+                        <ReusableButton onClick={editTool} text={"Save"} style={{marginTop: "10px", width: "100px", height: "25px", textAlign: "center", alignContent: "left", justifyContent: "left", borderRadius: "8px", border: "none"}} /> 
+                    </div> 
+                    <div className="button">
+                        <ReusableButton onClick={handleNavBack} text={"Cancel"} style={{marginTop: "10px", width: "100px", height: "25px", textAlign: "center", alignContent: "left", justifyContent: "left", borderRadius: "8px", border: "none"}} /> 
+                    </div>
                 </label>
-                <br></br>
             </form>
-            <ReusableButton onClick={editTool} text={"Save Edit"} />
-            <ReusableButton onClick={handleNavBack} text={"Cancel"} />
         </div>
     )
 }

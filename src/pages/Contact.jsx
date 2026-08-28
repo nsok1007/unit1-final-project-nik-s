@@ -28,6 +28,10 @@ export default function Contact(){
     return(
         <div>
             <h1 className="header-title">Contact</h1>
+            <div className="portrait-container">
+                <img className="portrait" src="/selfportrait.jpg"/>
+            </div>
+
             <div className="body">
                 <p>MoonLit is an application designed and developed by Nik Sokol. With a bachelor's degree in psychology and a minor in graphic design, they draw on their academic background to help make valuable resources for supporting mental wellbeing more accessible.</p> <br></br>
                 <p>Drawing from lived experience, they have chosen to curate tools informed by the following evidence-based psychotherapy approaches:</p> <br></br>
@@ -46,17 +50,17 @@ export default function Contact(){
                 <form className="contact-form" onSubmit={handleOnSubmit}>
                     <label>
                         Name:
-                        <input className="input-name" type="text" name="name" placeholder="John Doe" value={contactForm.name} onChange={handleChange} required />
+                        <input type="text" name="name" placeholder="John Doe" value={contactForm.name} onChange={handleChange} required />
                     </label>
                     <br />
                     <label>
                         Email:
-                        <input className="input-email" type="email" name="email"  placeholder="johndoe@email.com" value={contactForm.email} onChange={handleChange} required />
+                        <input type="email" name="email"  placeholder="johndoe@email.com" value={contactForm.email} onChange={handleChange} required />
                     </label>
                     <br />
                     <label>
                         Feedback:
-                        <textarea className="input-message" name="message" placeholder="Enter message here..." value={contactForm.textarea} rows="5" onChange={handleChange} required />
+                        <textarea name="message" placeholder="Enter message here..." value={contactForm.textarea} rows="5" onChange={handleChange} required />
                     </label> <br></br>
                     <div className="button">
                         <ReusableButton onClick={submitForm} text={"Submit"} style={{marginTop: "10px", width: "100px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}}/> 
