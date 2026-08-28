@@ -5,6 +5,8 @@ export default function UserLibrary({favoriteTool, handleOnDelete, handleNavEdit
     
     return(
         <div>
+            <h1 className="header-title">User Library</h1>
+            <h2 className="subtitle">Skills you add will appear here!</h2>
             <section>
                 <ul>
                     {favoriteTool.map((cskill) => (
@@ -15,10 +17,6 @@ export default function UserLibrary({favoriteTool, handleOnDelete, handleNavEdit
                         </div>
                     ))}
                 </ul>
-            </section>
-                
-            <section>
-            
             </section>
         </div>
         
