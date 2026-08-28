@@ -6,8 +6,8 @@ import Contact from './pages/Contact';
 import CopingSkills from './pages/CopingSkills';
 import UserLibrary from './pages/UserLibrary';
 import CopingSkillsDetails from './pages/CopingSkillDetails';
-import CustomToolForm from './features/coping-tools/CustomToolForm';
-import EditCustomToolForm from './features/coping-tools/EditCustomToolForm';
+import CustomToolForm from './pages/features/coping-tools/CustomToolForm';
+import EditCustomToolForm from './pages/features/coping-tools/EditCustomToolForm';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Disclaimer from './components/Disclaimer';
@@ -85,8 +85,8 @@ export default function App(){
                 <Route path="/contact" element={<Contact />} />
             </Routes>
             <br></br>
-            </div>
             <Disclaimer />
+            </div>
             <Footer />
             </div>
     );
