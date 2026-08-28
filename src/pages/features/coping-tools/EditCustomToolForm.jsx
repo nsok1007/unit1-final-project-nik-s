@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {useParams} from 'react-router';
-import ReusableButton from '../../components/ReusableButton'
+import ReusableButton from '../../../components/ReusableButton'
 
 export default function EditCustomToolForm({favoriteTool, setFavoriteTool, handleNavBack}){
      const{cskillId} = useParams(); 

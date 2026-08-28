@@ -1,6 +1,6 @@
 import {useState} from 'react';
-import ReusableButton from '../../components/ReusableButton';
-import mockData from '../coping-tools/mockData.json'
+import ReusableButton from '../../../components/ReusableButton';
+import mockData from './mockData.json'
 
 export default function CustomToolForm({favoriteTool, setFavoriteTool, handleNavBack}){ //single state object
     const [customTool, setCustomTool] = useState({
@@ -25,7 +25,7 @@ export default function CustomToolForm({favoriteTool, setFavoriteTool, handleNav
     }
 
     return(
-        <div>
+        <div className="custom-tool-form">
             <form onSubmit={createTool}>
                 <h2>Create Your Own Coping Tool</h2>
                 <label>
@@ -44,8 +44,7 @@ export default function CustomToolForm({favoriteTool, setFavoriteTool, handleNav
                 <label>
                     Describe how you would use this:
                     <br></br>
-                    <input
-                        type="text"
+                    <textarea
                         name="description"
                         value={customTool.description}
                         onChange={handleCustomToolChange}
@@ -54,8 +53,12 @@ export default function CustomToolForm({favoriteTool, setFavoriteTool, handleNav
                     />      
                 </label>
                 <br></br>
-                <ReusableButton onClick={handleNavBack} text={"Back"}/>
-                <ReusableButton  onClick={handleCustomToolChange} text={"Create"} />
+                 <div className="button">
+                    <ReusableButton  onClick={handleCustomToolChange} text={"Create"} style={{marginTop: "10px", width: "100px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}}/>
+                </div>
+                <div className="button">
+                    <ReusableButton onClick={handleNavBack} text={"Back"} style={{marginTop: "10px", width: "100px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}}/>
+                </div>
             </form>    
         </div> 
     );
