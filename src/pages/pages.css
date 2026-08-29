@@ -80,7 +80,6 @@ input{
     border: 1px solid #c2baf1;
     display: inline-block;
     box-sizing: borderbox;
-
 }
 
 textarea{
@@ -145,6 +144,16 @@ textarea{
     width: 500px;
     height: 300px;
     color:#fffffe;
+}
+
+@media (max-width: 650px){
+    .edit-custom-form{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 75%;
+        margin-bottom: 25px;
+    }
 }
 
 .about-logo-container{

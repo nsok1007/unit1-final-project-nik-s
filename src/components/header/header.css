@@ -6,6 +6,16 @@
     padding: 0.5rem 0;
     background-color: #1f3952;
 }
+@media (max-width: 650px){
+    .contact-form{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 75%;
+        margin-left: -50px; 
+        margin-bottom: 50px;
+    }
+}
 
 @media (max-width: 500px) {
     .nav-bar{
