@@ -1,17 +1,27 @@
 footer{
     display: flex;
+    flex-direction: row;
     justify-content:center;
     align-items: center;
-    gap: 1rem;
-    padding: 1.35rem 0;
+    gap: clamp(8px, 1vh, 16px);
+    padding: 1.35rem;
     background-color: #1f3952;
     color: #ffffff;
-    font-size: small;
+    font-size: clamp(10px, 13px + 1rem, 16px);
 }
 
 address{
     font-style: normal;
 }
+
+@media (max-width: 500px){
+    footer{
+        flex-direction: column;
+        font-size: 10px;
+        max-width: 100%;
+    }
+}
+
 
 
 

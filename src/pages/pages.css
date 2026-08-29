@@ -60,6 +60,13 @@ li a:hover{
     color:#fffffe;
 }
 
+@media (max-width: 500px) {
+    .contact-form{
+        max-width: fit-content;
+        margin-left: -50px;
+    }
+}
+
 input{
     text-align:left;
     width: 100%;
