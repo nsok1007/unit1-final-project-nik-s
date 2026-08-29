@@ -1,9 +1,19 @@
-nav {
+.nav-bar {
     display: flex;
     align-items: center;
+    position:relative;
     gap: 1rem;
     padding: 0.5rem 0;
     background-color: #1f3952;
+}
+
+@media (max-width: 500px) {
+    .nav-bar{
+        gap: 0 rem;
+        padding-right: 10px;
+        max-width: 100%;
+    }
+    
 }
 
 nav h1 {
@@ -23,3 +33,42 @@ nav a:hover{
     color: #d2ccf5;
 }
 
+nav a.active{
+    color: #b9b4da;
+}
+
+@media (max-width: 500px) {
+    .nav-burger{
+    visibility: collapse;  
+    position: relative;
+    }
+    .nav-burger a{
+        color: black;
+    }
+    nav a:hover{
+        color:#5d53a0;
+    }
+    nav a.active{
+    color: #2e2665;
+    }
+}
+
+.burger-section{ /*hides hamburger menu from default view*/
+    visibility: hidden;
+    margin-left: auto;
+}
+
+@media (max-width: 500px) {
+    .burger-section{
+        visibility:visible;
+        position: fixed;
+        margin-top: 20px;
+        margin-right: 15px;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        object-fit: fill;
+        background-color: #1f3952;
+        box-shadow: #aeaeae;
+    }
+}
