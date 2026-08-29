@@ -29,7 +29,7 @@ export default function Contact(){
         <div>
             <h1 className="header-title">Contact</h1>
             <div className="portrait-container">
-                <img className="portrait" src="/selfportrait.jpg"/>
+                <img className="portrait" src="/selfportrait.jpg" alt="Self portrait of Nik Sokol, developer of MoonLit. They have shoulder-length black hair, and are wearing a knit orange top."/>
             </div>
 
             <div className="body">
