@@ -2,6 +2,8 @@
     color:#ffffff;
     opacity: 95%;
     text-align: center;
+    transition-property: f;
+
 }
 
 .subtitle{
@@ -99,6 +101,11 @@ textarea{
 .button :hover{
     background-color: #a1a1a1;
     color:#fffffe;
+}
+
+.button{
+    transition-property: background-color;
+    transition-duration: 0.2s;
 }
 
 .custom-form{

@@ -6,6 +6,7 @@
     padding: 0.5rem 0;
     background-color: #1f3952;
 }
+
 @media (max-width: 650px){
     .contact-form{
         display: flex;
@@ -23,13 +24,17 @@
         padding-right: 10px;
         max-width: 100%;
     }
-    
 }
 
 nav h1 {
     display: inline;
     font-family: "Lexend Deca", sans-serif;
     font-size: 1.5rem;
+    font: #ffffff;
+}
+
+nav h1 a:hover{
+    color:blueviolet
 }
 
 nav a, navNavLink {
@@ -37,14 +42,15 @@ nav a, navNavLink {
     display: inline-block;
     padding: 0.5rem;
     text-decoration: none;
+    transition-duration: 0.4s;
 }
 
 nav a:hover{
-    color: #d2ccf5;
+    color: #d9d3ff;
 }
 
 nav a.active{
-    color: #b9b4da;
+    color: #e1eefaf0;
 }
 
 @media (max-width: 500px) {
@@ -53,13 +59,13 @@ nav a.active{
     position: relative;
     }
     .nav-burger a{
-        color: black;
+        color: rgb(252, 247, 247);
     }
     nav a:hover{
-        color:#5d53a0;
+        color:#d7d1ff;
     }
     nav a.active{
-    color: #2e2665;
+    color: #91c8ff6c;
     }
 }
 
