@@ -1,5 +1,5 @@
 import {useNavigate, Routes, Route} from 'react-router';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -16,7 +16,13 @@ import './index.css'
 
 
 export default function App(){ 
-    const [favoriteTool, setFavoriteTool] = useState([]);  //setting state for CopingSkills
+    const [favoriteTool, setFavoriteTool] = useState(JSON.parse(localStorage.getItem('favoriteTool')));  //setting state for CopingSkills
+    
+    useEffect(() => {
+        if (localStorage.getItem('favoriteTool').length >= 1) { /* .length > 1 = 2 items to me*/
+            localStorage.setItem(`favoriteTool`, JSON.stringify(favoriteTool));
+        }
+    }, [favoriteTool]);
 
     const handleFavoriteToolOnClick = (cskill) => { //appends added cskill to the new array of favoriteTool
         setFavoriteTool([

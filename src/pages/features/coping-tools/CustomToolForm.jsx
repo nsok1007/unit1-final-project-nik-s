@@ -1,12 +1,11 @@
 import {useState} from 'react';
 import ReusableButton from '../../../components/ReusableButton';
-import mockData from './mockData.json'
 
-export default function CustomToolForm({favoriteTool, setFavoriteTool, handleNavBack}){ //single state object
+export default function CustomToolForm({setFavoriteTool, handleNavBack}){ //single state object
     const [customTool, setCustomTool] = useState({
         name: "",
         description: "",
-        id: (mockData.length + favoriteTool.length + 10).toString(), //declared id property for form to use so user-created tools have a generated id to allow rendering using Route
+        id: crypto.randomUUID() //user-created tools have a generated id to allow persistent state
     });
 
     const handleCustomToolChange = (e) => { //destructure name and value from the event
