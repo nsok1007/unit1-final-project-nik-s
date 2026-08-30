@@ -62,7 +62,7 @@ export default function Contact(){
                         Feedback:
                         <textarea name="message" placeholder="Enter message here..." value={contactForm.textarea} rows="5" onChange={handleChange} required />
                     </label> <br></br>
-                    <div className="button">
+                    <div>
                         <ReusableButton onClick={submitForm} text={"Submit"} style={{marginTop: "10px", width: "100px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}}/> 
                     </div>
                 </form>

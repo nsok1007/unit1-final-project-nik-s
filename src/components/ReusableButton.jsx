@@ -1,6 +1,6 @@
 const ReusableButton = ({onClick,text,style}) => {
     return (
-        <button 
+        <button className="button"
         onClick={onClick}
         style={style}>
         {text}
