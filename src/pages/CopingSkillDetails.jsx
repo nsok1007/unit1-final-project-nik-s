@@ -1,8 +1,9 @@
 import {useState} from 'react';
 import {useParams, useNavigate} from 'react-router';
-import mockData from '../features/coping-tools/mockData.json';
+import mockData from '../pages/features/coping-tools/mockData.json';
 import ReusableButton from '../components/ReusableButton'
 import ErrorMessage from '../components/ErrorMessage';
+import './pages.css'
 
 export default function CopingSkillsDetails({favoriteTool, editedSkill, handleNavEdit}){  
     const [displayButton] = useState(true);
@@ -24,13 +25,15 @@ export default function CopingSkillsDetails({favoriteTool, editedSkill, handleNa
     } else {
             return(
                 <div>
-                    <h1>Coping Skill Details</h1>
+                    <h1 className="header-title">Coping Skill Details</h1>
                     <p className="detail-name"><strong>Name:</strong> {cskill.name}</p>
                     <p className="detail-description"><strong>Description:</strong> {cskill.description}</p> <br></br>
-                    <ReusableButton onClick={handleNavBack} text={"Back"} />
+                    <div className="button">
+                         <ReusableButton onClick={handleNavBack} text={"Back"} style={{marginTop: "10px", marginLeft: "50px", width: "70px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}} />
+                    </div>
                     <div>
                         {!displayButton && editedSkill.id == [mockData.id]}
-                        <ReusableButton onClick={handleNavEdit} text={"Edit"} />
+                        <ReusableButton onClick={handleNavEdit} text={"Edit"} style={{marginTop: "10px", marginLeft: "50px", width: "70px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}} />
                         
                     </div>  
                 </div>

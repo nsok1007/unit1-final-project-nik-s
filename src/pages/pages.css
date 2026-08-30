@@ -1,0 +1,185 @@
+.header-title{
+    color:#ffffff;
+    opacity: 95%;
+    text-align: center;
+}
+.subtitle{
+    color: #ffffff;
+    opacity: 90%;
+    text-align: center;
+    padding-top: 1.5%;
+}
+.therapyapproaches{
+    padding-left: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.body{
+    color: #fffffe;
+    opacity: 85%;
+    padding-top: 3%;
+    line-height: 1.5rem;
+}
+ul {
+    padding-top: 10px;
+}
+li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    line-height: 1.5rem;
+    transition: color .3s ease-in-out;
+}
+li a:hover{
+    color:#c2baf1;
+}
+.extra-text{
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.contact-form{
+    text-align: left;
+    font-size: large;
+    font-weight: lighter;
+    line-height: 30px;
+    padding: 20px;
+    width: 500px;
+    height: 300px;
+    color:#fffffe;
+}
+
+@media (max-width: 500px) {
+    .contact-form{
+        max-width: fit-content;
+        margin-left: -50px;
+    }
+}
+input{
+    text-align:left;
+    width: 100%;
+    height: 20px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-right: 50px;
+    padding-left: 6px;
+    border-radius: 8px;
+    background-color: #c2baf1;
+    border: 1px solid #c2baf1;
+    display: inline-block;
+    box-sizing: borderbox;
+}
+textarea{
+    width: 100%;
+    height: 90px;
+    text-align: left;
+    padding-right: 49px;
+    padding-left: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 8px;
+    background-color: #c2baf1;
+    border: 1px solid #c2baf1;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.button{
+      transition: color .1s ease-in-out, background-color .1s ease-in-out;
+}
+
+.button :hover{
+    background-color: #a1a1a1;
+    color:#fffffe;
+}
+.custom-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 25px;
+    text-align: left;
+    font-size: large;
+    font-weight: lighter;
+    line-height: 30px;
+    padding: 20px;
+    width: full;
+    height: full;
+    color:#fffffe;
+}
+
+.detail-name{
+    display: flex;
+    justify-content: center;
+    color: #fffffe;
+    opacity: 85%;
+    padding-top: 3%;
+    line-height: 1.5rem;
+    font-size: large;
+}
+
+.detail-description{
+    color: #fffffe;
+    opacity: 85%;
+    padding-top: 3%;
+    line-height: 1.5rem;
+    font-size: regular;
+}
+
+.edit-custom-form{
+    text-align: left;
+    font-size: large;
+    font-weight: lighter;
+    line-height: 30px;
+    padding: 20px;
+    width: 500px;
+    height: 300px;
+    color:#fffffe;
+}
+
+@media (max-width: 650px){
+    .edit-custom-form{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 75%;
+        margin-bottom: 25px;
+    }
+}
+
+.about-logo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-logo{
+    width: 200px;
+    height: 200px;
+    margin-top: 30px;
+    border-radius: 50%;
+    object-fit: fill;
+}
+
+.portrait-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portrait{
+    width: 200px;
+    height: 200px;
+    margin-top: 30px;
+    border-radius: 50%;
+    object-fit: fill;
+}

@@ -1,7 +1,8 @@
-const ReusableButton = ({onClick,text}) => {
+const ReusableButton = ({onClick,text,style}) => {
     return (
-        <button 
-        onClick={onClick}>
+        <button className="button"
+        onClick={onClick}
+        style={style}>
         {text}
       </button>
     );
