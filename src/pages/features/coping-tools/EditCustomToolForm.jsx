@@ -4,20 +4,16 @@ import ReusableButton from '../../../components/ReusableButton';
 
 
 export default function EditCustomToolForm({favoriteTool, setFavoriteTool, handleNavBack}){
-     const{cskillId} = useParams(); 
-     const toolToEdit = favoriteTool.find((cskill) => ( //.find() iterates through favoriteTool for the first match of a skill
+    const{cskillId} = useParams(); 
+    const toolToEdit = favoriteTool.find((cskill) => ( //.find() iterates through favoriteTool for the first match of a skill
         cskill.id === cskillId
-     ))
-     console.log(toolToEdit);
+    ))
 
+    const [editedSkill, setEditedSkill] = useState(toolToEdit) //set useState for editing skill
 
-     const [editedSkill, setEditedSkill] = useState(toolToEdit) //set useState for editing skill
-
-     const newList = [...favoriteTool] 
-     const filteredList = newList.filter((cskill) => cskill.id != cskillId) //.filter() iterates through newList - a shallow copy of favoriteTool based on skills that match ids
-     console.log(filteredList);
+    const newList = [...favoriteTool] 
+    const filteredList = newList.filter((cskill) => cskill.id != cskillId) //.filter() iterates through newList - a shallow copy of favoriteTool based on skills that match ids
      
-
     const handleEditForm = (e) => { 
         const{name, value} = e.target;
         setEditedSkill((editedSkill) => (
@@ -39,7 +35,7 @@ export default function EditCustomToolForm({favoriteTool, setFavoriteTool, handl
         <div className="edit-custom-form">
             <form onSubmit={editTool}>
                 <h2>Edit {editedSkill.name}</h2>
-                <label className="edit-label">
+                <label>
                     Coping Skill Name: 
                     <br></br>
                     <input
@@ -50,7 +46,7 @@ export default function EditCustomToolForm({favoriteTool, setFavoriteTool, handl
                     />
                 </label>
                 <br></br>
-                <label className="edit-label">
+                <label>
                     Description:
                     <br></br>
                     <textarea
