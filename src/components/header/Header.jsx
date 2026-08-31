@@ -7,7 +7,7 @@ export default function Header() {
         <div className="header">
             <nav className="nav-bar">
                 <div className="nav-default">
-                    <NavLink to="./home"><h1 className="site-name">MoonLit</h1></NavLink>
+                    <NavLink to="./home"><h1>MoonLit</h1></NavLink>
                 </div>
                 <div className="nav-burger">
                     <NavLink to="./copingskills">Coping Skills</NavLink>
