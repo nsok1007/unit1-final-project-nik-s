@@ -1,5 +1,5 @@
 import {NavLink} from 'react-router';
-import Burger from './Burger';
+import Burger from '../header/burger-menu/Burger';
 import '../header/header.css'
 
 export default function Header() { 
