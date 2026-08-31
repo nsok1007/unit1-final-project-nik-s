@@ -101,6 +101,7 @@ textarea{
     background-color: #a1a1a1;
     color:#fffffe;
 }
+
 .custom-form{
     display: flex;
     justify-content: center;
@@ -117,6 +118,15 @@ textarea{
     color:#fffffe;
 }
 
+@media (max-width: 600px){
+    .custom-form{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 75%;
+        margin-bottom: 25px;
+    }
+}
 .detail-name{
     display: flex;
     justify-content: center;
