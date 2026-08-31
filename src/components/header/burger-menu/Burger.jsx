@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {Link} from 'react-router';
-import ReusableButton from '../../components/ReusableButton'
+import ReusableButton from '../../ReusableButton.jsx'
 import './burger.css'
 
 export default function BurgerMenu(){
