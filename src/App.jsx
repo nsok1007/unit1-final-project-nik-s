@@ -16,15 +16,22 @@ import './index.css'
 
 
 export default function App(){ 
-    const [favoriteTool, setFavoriteTool] = useState(JSON.parse(localStorage.getItem('favoriteTool')));  //setting state for CopingSkills
+    const favoriteToolFromLS = JSON.parse(localStorage.getItem('favoriteTool'));
+    const [favoriteTool, setFavoriteTool] = useState(favoriteToolFromLS ? favoriteToolFromLS : []);  //setting state for CopingSkills
     
     useEffect(() => {
-        if (localStorage.getItem('favoriteTool').length >= 1) { /* .length > 1 = 2 items to me*/
-            localStorage.setItem(`favoriteTool`, JSON.stringify(favoriteTool));
-        }
+        localStorage.setItem(`favoriteTool`, JSON.stringify(favoriteTool));
     }, [favoriteTool]);
 
     const handleFavoriteToolOnClick = (cskill) => { //appends added cskill to the new array of favoriteTool
+        //for loop to scan existing list for duplicate id before saving
+        for (const tool of favoriteTool) {
+            if (tool.name == cskill.name && tool.id == cskill.id) {
+                console.error(`Coping skill was already added.`);
+                return 
+            }
+        }
+
         setFavoriteTool([
             ...favoriteTool, cskill
         ]);
