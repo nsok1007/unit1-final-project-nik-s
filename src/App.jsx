@@ -39,8 +39,12 @@ export default function App(){
 
     const navigate = useNavigate(); //redirect users from page A to 'URL'
         const handleNavBack = () => {
-        navigate('../copingskills');
+        navigate('../userlibrary');
         };
+    
+        const handleNavHome = () => {
+        navigate('../home');
+        }
     
         const handleNavEdit = (cskillId) => { 
         navigate(`/features/coping-skills/editcustomtoolform/${cskillId}`);
@@ -49,7 +53,6 @@ export default function App(){
     const handleOnDelete = (name) => { //.filter() iterates & updates favoriteTool based on if the item still matches a known name within that array --> if not deletes the skill
         const revisedUserLib = favoriteTool.filter((cskill) => cskill.name !== name);
         setFavoriteTool(revisedUserLib);
-        console.log(name);
         };
 
     return(
@@ -75,7 +78,8 @@ export default function App(){
                 <Route path="/features/coping-tools/customtoolform" element={
                     <CustomToolForm 
                         favoriteTool={favoriteTool} 
-                        setFavoriteTool={setFavoriteTool} />
+                        setFavoriteTool={setFavoriteTool} 
+                        handleNavHome={handleNavHome}/>
                     }
                 />
                 <Route path="/features/coping-skills/editcustomtoolform/:cskillId" element={
