@@ -7,8 +7,6 @@ export default function CustomToolForm({setFavoriteTool, handleNavHome}){ //sing
         description: "",
         id: crypto.randomUUID() //user-created tools have a generated id to allow persistent state
     });
-
-    // Stylistic choice, follow comment was in-line with the function, moved to above function out of personal taste
     
     //destructure name and value from the event
     const handleCustomToolChange = (e) => {
