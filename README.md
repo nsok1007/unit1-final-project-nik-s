@@ -1,16 +1,36 @@
-# React + Vite
+ 
+ # LaunchCode: 2605 Unit 1 Final Project – MoonLit
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Description
+MoonLit is a single-page web application that was built as the final project for Unit 1 of LaunchCode's part-time Software Development, showcasing modern web development using html, css, and javascript within React. Key features include users being able to add, edit, delete and create their <em>own</em> coping skills which are saved to the 'User Library' page.
 
-Currently, two official plugins are available:
+## Directory
+- HOME
+- COPING SKILLS
+  - ADD +
+- CREATE NEW TOOL + 
+  - CREATE
+  - BACK
+- ABOUT
+- CONTACT
+- USER LIBRARY
+  - EDIT
+    - SAVE
+    - BACK (cancel) 
+  - DELETE
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Wireframes
+My wireframes can be viewed here: https://drive.google.com/drive/folders/1YgYrkfWKyS00LzB5qeFsWb1Nry2zv16b
 
-## React Compiler
+## Status
+MoonLit is currently at the MVP stage.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies
+[![My Skills](https://skillicons.dev/icons?i=html,css,js,react,vite)](https://skillicons.dev)
+ 
+ ## Future Features
+ - transition localStorage and mock data to an API/database
+ - add secondary feature - users can add/edit/delete mental health safety plan form
+ - implement modals or alerts to verify button submission 
+ - hard-code input validation hints if applicable or necessary
+ - streamline form architecture using React Hook Form (approved for U2 if desired)

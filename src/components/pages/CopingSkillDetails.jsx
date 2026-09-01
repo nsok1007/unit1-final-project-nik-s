@@ -1,7 +1,7 @@
 import {useParams, useNavigate} from 'react-router';
 import mockData from '../pages/features/coping-tools/mockData.json';
-import ReusableButton from '../components/ReusableButton'
-import ErrorMessage from '../components/ErrorMessage';
+import ReusableButton from '../../components/layout-assets/ReusableButton'
+import ErrorMessage from '../../components/pages/ErrorMessage';
 import './pages.css'
 
 export default function CopingSkillsDetails({favoriteTool}){  
@@ -11,14 +11,14 @@ export default function CopingSkillsDetails({favoriteTool}){
 
     const toCopingSkills = useNavigate();
     const handleNavBack = () => {
-    toCopingSkills('../copingskills');
+        toCopingSkills('../copingskills');
     };
 
     if (!cskill) {
         return (
-            <ErrorMessage>
-                <p> Task not available.</p>
-            </ErrorMessage>
+            <div>
+                <ErrorMessage conditionalMessage={"Sorry! The coping skill you are looking for could not be found."}/>
+            </div>
         );
     } else {
             return(
@@ -27,7 +27,7 @@ export default function CopingSkillsDetails({favoriteTool}){
                     <p className="detail-name"><strong>Name:</strong> {cskill.name}</p>
                     <p className="detail-description"><strong>Description:</strong> {cskill.description}</p> <br></br>
                     <div className="button">
-                         <ReusableButton onClick={handleNavBack} text={"Back"} style={{marginTop: "10px", marginLeft: "50px", width: "70px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}} />
+                        <ReusableButton onClick={handleNavBack} text={"Back"} style={{marginTop: "10px", marginLeft: "50px", width: "70px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}} />
                     </div>
                 </div>
         )  

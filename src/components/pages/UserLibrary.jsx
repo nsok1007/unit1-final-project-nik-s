@@ -1,5 +1,5 @@
-import ReusableItem from "../components/ReusableItem";
-import ReusableButton from '../components/ReusableButton'
+import ReusableItem from "../../components/pages/features/coping-tools/ReusableItem";
+import ReusableButton from '../../components/layout-assets/ReusableButton'
 
 export default function UserLibrary({favoriteTool, handleOnDelete, handleNavEdit}){
     
@@ -24,10 +24,3 @@ export default function UserLibrary({favoriteTool, handleOnDelete, handleNavEdit
         
     )
 }
-
-/*
-
-ERROR: Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received (UserLibrary ln1)
-
-NOTE: user favorited tools are stored in memory --> use persistent state/local storage to keep on UserInventory --> DELETE a favorite tool from memory w/out re-rendering UserInventory each time and having users re-add their skills upon every refresh
-*/

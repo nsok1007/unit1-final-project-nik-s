@@ -1,8 +1,8 @@
 import {useState} from 'react';
-import ReusableButton from '../components/ReusableButton';
+import ReusableButton from '../../components/layout-assets/ReusableButton';
 import './pages.css'
 
-export default function Contact(){
+export default function Contact({handleNavHome}){
     const[contactForm, setContactForm] = useState({
         name: "",
         email: "",
@@ -11,7 +11,6 @@ export default function Contact(){
 
     const handleChange = (e) => {
     const {name, value} = e.target;
-    console.log(`Updating ${name}:`, value);
     setContactForm((prevData) => ({
         ...prevData,
         [name]: value,
@@ -20,11 +19,13 @@ export default function Contact(){
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
+        localStorage.setItem('contactForm', JSON.stringify(contactForm)); //store contact form data in localStorage
     }
 
-    function submitForm({text}){
+    function SubmitForm({text}){
         return <button type="submit">{text}</button>
     }
+
     return(
         <div>
             <h1 className="header-title">Contact</h1>
@@ -62,8 +63,9 @@ export default function Contact(){
                         Feedback:
                         <textarea name="message" placeholder="Enter message here..." value={contactForm.textarea} rows="5" onChange={handleChange} required />
                     </label> <br></br>
-                    <div>
-                        <ReusableButton onClick={submitForm} text={"Submit"} style={{marginTop: "10px", width: "100px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}}/> 
+                    <div className="button">
+                        <ReusableButton onClick={SubmitForm} text={"Submit"} style={{marginTop: "10px", width: "100px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}}/> 
+                         <ReusableButton onClick={handleNavHome} text={"Back"} style={{marginTop: "10px", marginLeft: "50px", width: "70px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}} />
                     </div>
                 </form>
             </div>

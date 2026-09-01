@@ -1,14 +1,15 @@
 import {useState} from 'react';
-import ReusableButton from '../../../components/ReusableButton';
+import ReusableButton from '../../../layout-assets/ReusableButton';
 
-export default function CustomToolForm({setFavoriteTool, handleNavBack}){ //single state object
+export default function CustomToolForm({setFavoriteTool, handleNavCopingSkills}){ //single state object
     const [customTool, setCustomTool] = useState({
         name: "",
         description: "",
         id: crypto.randomUUID() //user-created tools have a generated id to allow persistent state
     });
-
-    const handleCustomToolChange = (e) => { //destructure name and value from the event
+    
+    //destructure name and value from the event
+    const handleCustomToolChange = (e) => {
         const{name, value} = e.target;
         setCustomTool((prevData) => ({
             ...prevData,
@@ -18,7 +19,8 @@ export default function CustomToolForm({setFavoriteTool, handleNavBack}){ //sing
 
     const createTool = (e) => { 
         e.preventDefault();
-        setFavoriteTool((favoriteTool) => [ //creates a new coping skill and appends it to the array favoriteTool
+        //create a new coping skill and appends it to the array favoriteTool
+        setFavoriteTool((favoriteTool) => [
         ...favoriteTool, customTool
         ]);
     }
@@ -52,13 +54,13 @@ export default function CustomToolForm({setFavoriteTool, handleNavBack}){ //sing
                     />      
                 </label>
                 <br></br>
-                 <div className="button">
+                <div className="button">
                     <ReusableButton  onClick={handleCustomToolChange} text={"Create"} style={{marginTop: "10px", width: "100px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}}/>
                 </div>
-                <div className="button">
-                    <ReusableButton onClick={handleNavBack} text={"Back"} style={{marginTop: "10px", width: "100px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}}/>
-                </div>
             </form>    
+            <div className="button">
+                <ReusableButton onClick={handleNavCopingSkills} text={"Back"} style={{display: 'flex', flexDirection: 'column', marginTop: "310px", marginLeft: '-380px', width: "100px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}} />
+            </div>
         </div> 
     );
 };

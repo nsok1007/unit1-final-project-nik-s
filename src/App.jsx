@@ -1,48 +1,68 @@
 import {useNavigate, Routes, Route} from 'react-router';
 import {useState, useEffect} from 'react';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import CopingSkills from './pages/CopingSkills';
-import UserLibrary from './pages/UserLibrary';
-import CopingSkillsDetails from './pages/CopingSkillDetails';
-import CustomToolForm from './pages/features/coping-tools/CustomToolForm';
-import EditCustomToolForm from './pages/features/coping-tools/EditCustomToolForm';
-import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
-import Disclaimer from './components/Disclaimer';
+import Home from './components/pages/Home';
+import About from './components/pages/About';
+import Contact from './components/pages/Contact';
+import CopingSkills from './components/pages/CopingSkills';
+import UserLibrary from './components/pages/UserLibrary';
+import CopingSkillsDetails from './components/pages/CopingSkillDetails';
+import CustomToolForm from './components/pages/features/coping-tools/CustomToolForm';
+import EditCustomToolForm from './components/pages/features/coping-tools/EditCustomToolForm';
+import Header from './components/layout-assets/header/Header';
+import Footer from './components/layout-assets/footer/Footer';
+import Disclaimer from './components/layout-assets/Disclaimer';
+import ErrorMessage from './components/pages/ErrorMessage';
 import './App.css'
 import './index.css'
 
 
 export default function App(){ 
-    const [favoriteTool, setFavoriteTool] = useState(JSON.parse(localStorage.getItem('favoriteTool')));  //setting state for CopingSkills
+    const favoriteToolFromLS = JSON.parse(localStorage.getItem('favoriteTool'));
+    const [favoriteTool, setFavoriteTool] = useState(favoriteToolFromLS ? favoriteToolFromLS : []);  //setting state for CopingSkills
     
     useEffect(() => {
-        if (localStorage.getItem('favoriteTool').length >= 1) { /* .length > 1 = 2 items to me*/
-            localStorage.setItem(`favoriteTool`, JSON.stringify(favoriteTool));
-        }
+        localStorage.setItem(`favoriteTool`, JSON.stringify(favoriteTool));
     }, [favoriteTool]);
 
     const handleFavoriteToolOnClick = (cskill) => { //appends added cskill to the new array of favoriteTool
+
+        //for loop to scan existing list for duplicate id before saving
+        for (const tool of favoriteTool) {
+            if (tool.name == cskill.name && tool.id == cskill.id) {
+                console.error(`Coping skill was already added.`);
+                return 
+            }
+        }
+
+        // Don't save if tool.name matches incoming cskill.name (likewise for id)
         setFavoriteTool([
             ...favoriteTool, cskill
         ]);
     }
 
     const navigate = useNavigate(); //redirect users from page A to 'URL'
-        const handleNavBack = () => {
-        navigate('../copingskills');
+    
+        const handleNavHome = () => {
+        navigate('../home');
         };
+
+        const handleNavBack = () => {
+        navigate('../userlibrary');
+        };
+    
+        const handleNavCopingSkills = () => {
+        navigate('../copingSkills');
+        }
     
         const handleNavEdit = (cskillId) => { 
         navigate(`/features/coping-skills/editcustomtoolform/${cskillId}`);
         };
 
-    const handleOnDelete = (name) => { //.filter() iterates & updates favoriteTool based on if the item still matches a known name within that array --> if not deletes the skill
+    //.filter() iterates & updates favoriteTool based on if the item still matches a known name within that array
+    // if no match is found --> delete the skill
+    const handleOnDelete = (name) => {
         const revisedUserLib = favoriteTool.filter((cskill) => cskill.name !== name);
         setFavoriteTool(revisedUserLib);
-        console.log(name);
         };
 
     return(
@@ -50,7 +70,7 @@ export default function App(){
             <Header />
             <div className="main-content">
            <Routes>
-                <Route path="/" element={<Home />} /> {/*Default path which is currently set to home */}
+                <Route path="/" element={<Home />} /> {/*Default path is set to home */}
                 <Route path="/home" element={<Home />} />
                 <Route path="/copingskills" element={
                     <CopingSkills 
@@ -68,7 +88,8 @@ export default function App(){
                 <Route path="/features/coping-tools/customtoolform" element={
                     <CustomToolForm 
                         favoriteTool={favoriteTool} 
-                        setFavoriteTool={setFavoriteTool} />
+                        setFavoriteTool={setFavoriteTool} 
+                        handleNavCopingSkills={handleNavCopingSkills}/>
                     }
                 />
                 <Route path="/features/coping-skills/editcustomtoolform/:cskillId" element={
@@ -88,12 +109,17 @@ export default function App(){
                     }
                 />
                 <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-            </Routes>
-            <br></br>
+                <Route path="/contact" element={
+                    <Contact 
+                        handleNavHome={handleNavHome}/>
+                    } 
+                />
+                <Route path="*" element={<ErrorMessage />} // * is the symbol for N/A on site
+                />
+            </Routes>   <br></br>
             <Disclaimer />
             </div>
             <Footer />
-            </div>
+        </div>
     );
 };

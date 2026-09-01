@@ -1,12 +1,12 @@
 import {useState} from 'react';
 import {useNavigate, Link} from 'react-router';
-import ReusableButton from '../components/ReusableButton';
-import ReusableItem from '../components/ReusableItem';
+import ReusableButton from '../../components/layout-assets/ReusableButton';
+import ReusableItem from '../../components/pages/features/coping-tools/ReusableItem';
 import mockData from './features/coping-tools/mockData.json';
 import './pages.css'
 
 export default function CopingSkills({favoriteTool, handleFavoriteToolOnClick}){ 
-    const [elementVisible] = useState(true)
+    const [elementVisible] = useState(true) //set state for conditional rendering to HIDE new/added skills from showing on CopingSkills
 
     const toCustomToolForm = useNavigate();
     const handlePageRedirect = () => {

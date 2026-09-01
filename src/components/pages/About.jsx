@@ -5,7 +5,7 @@ function About(){
         <div>
             <h1 className="header-title">About</h1>
             <div className="about-logo-container">
-                <img className="about-logo" src="src/assets/MoonLitLogo.svg" alt="An outline of a winding road leading into the mountains at night, with the moon above." caption=""/>
+                <img className="about-logo" src="/MoonLitLogo.svg" alt="An outline of a winding road leading into the mountains at night, with the moon above."/>
             </div>
             <main className="body">
                 <p>Just like the moon provides light at night, MoonLit serves as a ‘guiding light’ for those seeking mental health support through accessible coping tools without being pigeonholed into a specific therapeutic process or mental health condition. Instead, MoonLit is an accessible and inclusive psychoeducational self-help app for adult survivors of childhood trauma.</p> <br></br><br></br>
