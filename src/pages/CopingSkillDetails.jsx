@@ -11,7 +11,7 @@ export default function CopingSkillsDetails({favoriteTool}){
 
     const toCopingSkills = useNavigate();
     const handleNavBack = () => {
-    toCopingSkills('../copingskills');
+        toCopingSkills('../copingskills');
     };
 
     if (!cskill) {
@@ -28,7 +28,7 @@ export default function CopingSkillsDetails({favoriteTool}){
                     <p className="detail-name"><strong>Name:</strong> {cskill.name}</p>
                     <p className="detail-description"><strong>Description:</strong> {cskill.description}</p> <br></br>
                     <div className="button">
-                         <ReusableButton onClick={handleNavBack} text={"Back"} style={{marginTop: "10px", marginLeft: "50px", width: "70px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}} />
+                        <ReusableButton onClick={handleNavBack} text={"Back"} style={{marginTop: "10px", marginLeft: "50px", width: "70px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}} />
                     </div>
                 </div>
         )  
