@@ -11,6 +11,7 @@ import EditCustomToolForm from './components/pages/features/coping-tools/EditCus
 import Header from './components/layout-assets/header/Header';
 import Footer from './components/layout-assets/footer/Footer';
 import Disclaimer from './components/layout-assets/Disclaimer';
+import ErrorMessage from './components/pages/ErrorMessage';
 import './App.css'
 import './index.css'
 
@@ -113,11 +114,12 @@ export default function App(){
                         handleNavHome={handleNavHome}/>
                     } 
                 />
-            </Routes>
-            <br></br>
+                <Route path="*" element={<ErrorMessage />} // * is the symbol for N/A on site
+                />
+            </Routes>   <br></br>
             <Disclaimer />
             </div>
             <Footer />
-            </div>
+        </div>
     );
 };

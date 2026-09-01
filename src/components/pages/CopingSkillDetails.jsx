@@ -16,10 +16,9 @@ export default function CopingSkillsDetails({favoriteTool}){
 
     if (!cskill) {
         return (
-            <ErrorMessage>
-                <p> The coping skill you are trying to access is not available.</p>
-                <ReusableButton onClick={handleNavBack} text={"Back"} style={{marginTop: "10px", marginLeft: "50px", width: "70px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}} />
-            </ErrorMessage>
+            <div>
+                <ErrorMessage conditionalMessage={"Sorry! The coping skill you are looking for could not be found."}/>
+            </div>
         );
     } else {
             return(

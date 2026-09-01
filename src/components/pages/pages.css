@@ -118,7 +118,7 @@ textarea{
     color:#fffffe;
 }
 
-@media (max-width: 600px){
+@media (max-width: 650px){
     .custom-form{
         display: flex;
         flex-direction: column;
@@ -192,4 +192,27 @@ textarea{
     margin-top: 30px;
     border-radius: 50%;
     object-fit: fill;
+}
+
+.errorMessage{
+    display: flex;
+    flex-direction: column;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    align-items: center;
+    line-height: 3.5rem;
+    color:#ffffff;
+}
+
+@media (max-width: 650px){
+    .errorMessage{
+        font-size: 13px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 20%;
+        margin-bottom: 20%;
+        align-items: center;
+        line-height: 3.5rem;
+        color:#ffffff;
+}
 }

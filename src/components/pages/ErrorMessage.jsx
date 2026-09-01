@@ -1,7 +1,9 @@
-export default function ErrorMessage() {
+export default function ErrorMessage({conditionalMessage}) {
     return(
-        <div>
-            <h1>ERROR: COULD NOT DISPLAY CONTENT </h1>
+        <div className="errorMessage">
+            <h1>ERROR</h1>
+            <h2>COULD NOT DISPLAY CONTENT</h2>
+            <p><em>{conditionalMessage}</em></p>
         </div>
     );
 };
