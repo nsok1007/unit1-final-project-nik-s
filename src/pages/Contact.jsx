@@ -20,7 +20,7 @@ export default function Contact(){
 
     const handleOnSubmit = (e) => {
         e.preventDefault();
-        localStorage.setItem('contactForm', JSON.stringify(contactForm));
+        localStorage.setItem('contactForm', JSON.stringify(contactForm)); //store contact form data in localStorage
     }
 
     function SubmitForm({text}){
