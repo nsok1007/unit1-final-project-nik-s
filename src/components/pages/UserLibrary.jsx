@@ -1,5 +1,5 @@
-import ReusableItem from "../components/ReusableItem";
-import ReusableButton from '../components/ReusableButton'
+import ReusableItem from "../../components/pages/features/coping-tools/ReusableItem";
+import ReusableButton from '../../components/layout-assets/ReusableButton'
 
 export default function UserLibrary({favoriteTool, handleOnDelete, handleNavEdit}){
     

@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {useNavigate} from 'react-router';
-import ReusableButton from '../components/ReusableButton';
+import ReusableButton from '../../components/layout-assets/ReusableButton';
 import './pages.css'
 
 export default function Contact(){

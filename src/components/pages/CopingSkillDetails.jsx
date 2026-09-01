@@ -1,7 +1,7 @@
 import {useParams, useNavigate} from 'react-router';
 import mockData from '../pages/features/coping-tools/mockData.json';
-import ReusableButton from '../components/ReusableButton'
-import ErrorMessage from '../components/ErrorMessage';
+import ReusableButton from '../../components/layout-assets/ReusableButton'
+import ErrorMessage from '../../components/pages/ErrorMessage';
 import './pages.css'
 
 export default function CopingSkillsDetails({favoriteTool}){  

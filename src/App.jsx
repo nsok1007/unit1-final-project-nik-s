@@ -1,14 +1,14 @@
 import {useNavigate, Routes, Route} from 'react-router';
 import {useState, useEffect} from 'react';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import CopingSkills from './pages/CopingSkills';
-import UserLibrary from './pages/UserLibrary';
-import CopingSkillsDetails from './pages/CopingSkillDetails';
-import CustomToolForm from './pages/features/coping-tools/CustomToolForm';
-import EditCustomToolForm from './pages/features/coping-tools/EditCustomToolForm';
-import Header from './components/header/Header';
+import Home from './components/pages/Home';
+import About from './components/pages/About';
+import Contact from './components/pages/Contact';
+import CopingSkills from './components/pages/CopingSkills';
+import UserLibrary from './components/pages/UserLibrary';
+import CopingSkillsDetails from './components/pages/CopingSkillDetails';
+import CustomToolForm from './components/pages/features/coping-tools/CustomToolForm';
+import EditCustomToolForm from './components/pages/features/coping-tools/EditCustomToolForm';
+import Header from './components/layout-assets/header/Header';
 import Footer from './components/layout-assets/footer/Footer';
 import Disclaimer from './components/layout-assets/Disclaimer';
 import './App.css'
