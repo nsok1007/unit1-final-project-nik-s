@@ -9,8 +9,8 @@ import CopingSkillsDetails from './pages/CopingSkillDetails';
 import CustomToolForm from './pages/features/coping-tools/CustomToolForm';
 import EditCustomToolForm from './pages/features/coping-tools/EditCustomToolForm';
 import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
-import Disclaimer from './components/Disclaimer';
+import Footer from './components/layout-assets/footer/Footer';
+import Disclaimer from './components/layout-assets/Disclaimer';
 import './App.css'
 import './index.css'
 
@@ -24,6 +24,7 @@ export default function App(){
     }, [favoriteTool]);
 
     const handleFavoriteToolOnClick = (cskill) => { //appends added cskill to the new array of favoriteTool
+
         //for loop to scan existing list for duplicate id before saving
         for (const tool of favoriteTool) {
             if (tool.name == cskill.name && tool.id == cskill.id) {
@@ -32,6 +33,7 @@ export default function App(){
             }
         }
 
+        // Don't save if tool.name matches incoming cskill.name (likewise for id)
         setFavoriteTool([
             ...favoriteTool, cskill
         ]);
@@ -50,7 +52,9 @@ export default function App(){
         navigate(`/features/coping-skills/editcustomtoolform/${cskillId}`);
         };
 
-    const handleOnDelete = (name) => { //.filter() iterates & updates favoriteTool based on if the item still matches a known name within that array --> if not deletes the skill
+    //.filter() iterates & updates favoriteTool based on if the item still matches a known name within that array
+    // if no match is found --> delete the skill
+    const handleOnDelete = (name) => {
         const revisedUserLib = favoriteTool.filter((cskill) => cskill.name !== name);
         setFavoriteTool(revisedUserLib);
         };
@@ -60,7 +64,7 @@ export default function App(){
             <Header />
             <div className="main-content">
            <Routes>
-                <Route path="/" element={<Home />} /> {/*Default path which is currently set to home */}
+                <Route path="/" element={<Home />} /> {/*Default path is set to home */}
                 <Route path="/home" element={<Home />} />
                 <Route path="/copingskills" element={
                     <CopingSkills 
