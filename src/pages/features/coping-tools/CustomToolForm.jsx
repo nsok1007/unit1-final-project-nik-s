@@ -19,7 +19,8 @@ export default function CustomToolForm({setFavoriteTool, handleNavHome}){ //sing
 
     const createTool = (e) => { 
         e.preventDefault();
-        setFavoriteTool((favoriteTool) => [ //creates a new coping skill and appends it to the array favoriteTool
+        //create a new coping skill and appends it to the array favoriteTool
+        setFavoriteTool((favoriteTool) => [
         ...favoriteTool, customTool
         ]);
     }
