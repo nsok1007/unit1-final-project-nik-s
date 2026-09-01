@@ -8,7 +8,10 @@ export default function CustomToolForm({setFavoriteTool, handleNavHome}){ //sing
         id: crypto.randomUUID() //user-created tools have a generated id to allow persistent state
     });
 
-    const handleCustomToolChange = (e) => { //destructure name and value from the event
+    // Stylistic choice, follow comment was in-line with the function, moved to above function out of personal taste
+    
+    //destructure name and value from the event
+    const handleCustomToolChange = (e) => {
         const{name, value} = e.target;
         setCustomTool((prevData) => ({
             ...prevData,
@@ -57,7 +60,7 @@ export default function CustomToolForm({setFavoriteTool, handleNavHome}){ //sing
                 </div>
             </form>    
             <div className="button">
-                <ReusableButton onClick={handleNavHome} text={"Back"} style={{display: 'flex', flexDirection: 'column', marginTop: "310px", marginLeft: '-380px', width: "100px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}} formnovalidate />
+                <ReusableButton onClick={handleNavHome} text={"Back"} style={{display: 'flex', flexDirection: 'column', marginTop: "310px", marginLeft: '-380px', width: "100px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}} />
             </div>
         </div> 
     );
