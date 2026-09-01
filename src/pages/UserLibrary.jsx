@@ -24,7 +24,3 @@ export default function UserLibrary({favoriteTool, handleOnDelete, handleNavEdit
         
     )
 }
-
-/*
-NOTE: user favorited tools are stored in memory --> use persistent state/local storage to keep on UserInventory --> DELETE a favorite tool from memory w/out re-rendering UserInventory each time and having users re-add their skills upon every refresh
-*/
