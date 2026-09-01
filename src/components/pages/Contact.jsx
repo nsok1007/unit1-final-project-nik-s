@@ -1,9 +1,8 @@
 import {useState} from 'react';
-import {useNavigate} from 'react-router';
 import ReusableButton from '../../components/layout-assets/ReusableButton';
 import './pages.css'
 
-export default function Contact(){
+export default function Contact({handleNavHome}){
     const[contactForm, setContactForm] = useState({
         name: "",
         email: "",
@@ -26,11 +25,6 @@ export default function Contact(){
     function SubmitForm({text}){
         return <button type="submit">{text}</button>
     }
-
-    const toHome = useNavigate(); 
-    const handleNavBack = () => {
-        toHome('../home');
-        };
 
     return(
         <div>
@@ -71,7 +65,7 @@ export default function Contact(){
                     </label> <br></br>
                     <div className="button">
                         <ReusableButton onClick={SubmitForm} text={"Submit"} style={{marginTop: "10px", width: "100px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}}/> 
-                         <ReusableButton onClick={handleNavBack} text={"Back"} style={{marginTop: "10px", marginLeft: "50px", width: "70px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}} />
+                         <ReusableButton onClick={handleNavHome} text={"Back"} style={{marginTop: "10px", marginLeft: "50px", width: "70px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}} />
                     </div>
                 </form>
             </div>

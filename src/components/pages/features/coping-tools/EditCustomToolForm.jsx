@@ -65,7 +65,7 @@ export default function EditCustomToolForm({favoriteTool, setFavoriteTool, handl
                         <ReusableButton onClick={editTool} text={"Save"} style={{marginTop: "10px", width: "100px", height: "25px", textAlign: "center", alignContent: "left", justifyContent: "left", borderRadius: "8px", border: "none"}} /> 
                     </div> 
                     <div className="button">
-                        <ReusableButton onClick={handleNavBack} text={"Cancel"} style={{marginTop: "10px", width: "100px", height: "25px", textAlign: "center", alignContent: "left", justifyContent: "left", borderRadius: "8px", border: "none"}} /> 
+                        <ReusableButton onClick={handleNavBack} text={"Back"} style={{marginTop: "10px", width: "100px", height: "25px", textAlign: "center", alignContent: "left", justifyContent: "left", borderRadius: "8px", border: "none"}} /> 
                     </div>
                 </label>
             </form>

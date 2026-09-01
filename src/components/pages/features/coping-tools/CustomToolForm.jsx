@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import ReusableButton from '../../../layout-assets/ReusableButton';
 
-export default function CustomToolForm({setFavoriteTool, handleNavHome}){ //single state object
+export default function CustomToolForm({setFavoriteTool, handleNavCopingSkills}){ //single state object
     const [customTool, setCustomTool] = useState({
         name: "",
         description: "",
@@ -59,7 +59,7 @@ export default function CustomToolForm({setFavoriteTool, handleNavHome}){ //sing
                 </div>
             </form>    
             <div className="button">
-                <ReusableButton onClick={handleNavHome} text={"Back"} style={{display: 'flex', flexDirection: 'column', marginTop: "310px", marginLeft: '-380px', width: "100px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}} />
+                <ReusableButton onClick={handleNavCopingSkills} text={"Back"} style={{display: 'flex', flexDirection: 'column', marginTop: "310px", marginLeft: '-380px', width: "100px", height: "25px", textAlign: "center", alignContent: "center", justifyContent: "center", borderRadius: "8px", border: "none"}} />
             </div>
         </div> 
     );

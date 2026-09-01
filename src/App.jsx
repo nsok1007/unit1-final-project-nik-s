@@ -40,12 +40,17 @@ export default function App(){
     }
 
     const navigate = useNavigate(); //redirect users from page A to 'URL'
+    
+        const handleNavHome = () => {
+        navigate('../home');
+        };
+
         const handleNavBack = () => {
         navigate('../userlibrary');
         };
     
-        const handleNavHome = () => {
-        navigate('../home');
+        const handleNavCopingSkills = () => {
+        navigate('../copingSkills');
         }
     
         const handleNavEdit = (cskillId) => { 
@@ -83,7 +88,7 @@ export default function App(){
                     <CustomToolForm 
                         favoriteTool={favoriteTool} 
                         setFavoriteTool={setFavoriteTool} 
-                        handleNavHome={handleNavHome}/>
+                        handleNavCopingSkills={handleNavCopingSkills}/>
                     }
                 />
                 <Route path="/features/coping-skills/editcustomtoolform/:cskillId" element={
@@ -103,7 +108,11 @@ export default function App(){
                     }
                 />
                 <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
+                <Route path="/contact" element={
+                    <Contact 
+                        handleNavHome={handleNavHome}/>
+                    } 
+                />
             </Routes>
             <br></br>
             <Disclaimer />
